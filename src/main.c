@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <string.h>
+#include "repo.h"
 
-int main(int argc, char *argv[])
+int main(int _, char *argv[])
 {
 
   // Setting up command dummies
   if (strcmp(argv[1], "init") == 0)
   {
-    printf("git init called");
+    return cmd_init();
   }
   else if (strcmp(argv[1], "add") == 0)
   {
