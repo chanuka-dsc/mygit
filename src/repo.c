@@ -1,5 +1,5 @@
-#include "helpers/helpers.h"
-#include "repo.h"
+#include <stdio.h>
+#include "fs.h"
 
 int cmd_init(void) 
 {
