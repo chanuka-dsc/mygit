@@ -2,11 +2,11 @@ CC=gcc
 CFLAGS=-Wall -Wextra -O2
 LDFLAGS=-lcrypto
 
-SRC=src/main.c src/repo.c src/fs.c src/hash.c src/index.c src/commit.c
+SRCS = src/main.c src/repo.c src/fs.c src/hash.c src/index.c src/commit.c src/object.c src/cmd_hash_object.c src/cmd_cat_file.c
 OUT=mygit
 
 all:
-	$(CC) $(CFLAGS) $(SRC) -o $(OUT) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(SRCS) -o $(OUT) $(LDFLAGS)
 
 clean:
 	rm -f $(OUT)

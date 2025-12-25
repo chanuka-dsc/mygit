@@ -12,6 +12,9 @@ int init_head(void);
 // Initialize index file
 int init_index(void);
 
+// Check if file exists
+int file_exists(const char *path);
+
 // Read entire file into memory
 // Returns allocated buffer (caller must free) or NULL on error
 // out_size will contain the file size

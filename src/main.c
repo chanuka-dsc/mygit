@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "repo.h"
+#include "cmd_cat_file.h"
+#include "cmd_hash_object.h"
 
-int main(int _, char *argv[])
+int main(int argc, char *argv[])
 {
 
   // Setting up command dummies
@@ -25,7 +27,25 @@ int main(int _, char *argv[])
   else if (strcmp(argv[1], "checkout") == 0)
   {
     printf("git checkout called");
-  } else {
+  }
+  else if (strcmp(argv[1], "hash-object") == 0)
+  {
+    if (argc != 3)
+    {
+      fprintf(stderr, "usage: mygit hash-object <file>\n");
+      return 1;
+    }
+    return cmd_hash_object(argv[2]);
+  } else if (strcmp(argv[1], "cat-file") == 0)
+  {
+    if (argc != 3)
+    {
+      fprintf(stderr, "usage: mygit cat-file <hash>\n");
+      return 1;
+    }
+    return cmd_cat_file(argv[2]);
+  }
+   else {
     printf("Invalid git command");
   }
 
